@@ -12,7 +12,10 @@ const SignInWithOAuth = () => {
 
   // console.log(Math.floor(100000 + Math.random() * 900000));
 
-  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+  const { startOAuthFlow } = useOAuth({
+    strategy: "oauth_google",
+    redirectUrl: "exp://192.168.29.190:8081",
+  });
 
   const onPress = useCallback(async () => {
     try {
