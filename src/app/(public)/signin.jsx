@@ -3,6 +3,7 @@ import { Button, View } from "react-native";
 import { useOAuth } from "@clerk/clerk-expo";
 import { useCallback } from "react";
 import useWarmUpBrowser from "../../hooks/useWarmUpBrowser";
+import { Link } from "expo-router";
 WebBrowser.maybeCompleteAuthSession();
 
 const SignInWithOAuth = () => {
@@ -79,6 +80,10 @@ const SignInWithOAuth = () => {
         }}
       >
         <Button title="Sign in with Google" onPress={onPress} />
+
+        <Link asChild href={"/register"}>
+          <Button title="Register" />
+        </Link>
       </View>
     </>
   );
