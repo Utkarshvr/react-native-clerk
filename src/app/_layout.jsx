@@ -3,6 +3,7 @@ import { Slot, useRouter, useSegments } from "expo-router";
 import tokenCache from "../config/tokenCache";
 import { useEffect } from "react";
 import { StatusBar, View } from "react-native";
+import LoadingScreen from "../components/Loading";
 
 const CLERK_PUBLISHABLE_KEY =
   "pk_test_Y3VkZGx5LXBpcGVmaXNoLTM0LmNsZXJrLmFjY291bnRzLmRldiQ";
@@ -25,6 +26,8 @@ const InitialLayout = () => {
       router.replace("/signin");
     }
   }, [isSignedIn]);
+
+  if (!isLoaded) return <LoadingScreen />;
 
   return <Slot />;
 };

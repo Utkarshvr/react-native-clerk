@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useUser } from "@clerk/clerk-expo";
+import LoadingScreen from "../../components/Loading";
 
 export default function home() {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
+
+  if (!isLoaded) return <LoadingScreen />;
 
   console.log({ user });
 
