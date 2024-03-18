@@ -6,6 +6,7 @@ import axiosInstance from "../../config/axiosInstance";
 
 export default function home() {
   const { user, isLoaded } = useUser();
+  console.log({ isLoaded, user });
 
   const [userDB, setUserDB] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

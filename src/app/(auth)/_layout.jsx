@@ -60,7 +60,8 @@ export default function _layout() {
   }, [isLoaded, isSignedIn, user]);
 
   console.log({ isUserDBLoggedIn, isLoaded });
-  if (!isLoaded || !isUserDBLoggedIn) return <LoadingScreen />;
+
+  if (!isLoaded) return <LoadingScreen />;
 
   // if (isSignedIn) {
   //   router.replace("/signin");
